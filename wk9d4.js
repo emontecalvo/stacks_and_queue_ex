@@ -140,9 +140,21 @@ squareDancePairing(["M", "M", "M", "W", "M", "W", "W", "M"]);
 //   a customer's paperwork isn't quite right, and it's back to the end of the queue. 
 // Show what a few minutes of the bank's lobby would look like.
 
+function bank(line) {
+  while (line.length > 0) {
+    if (Math.random() < 0.25) {
+      var badCustomer = line.shift();
+      line.push(badCustomer);
+      console.log(badCustomer + ' sent to the back')
+    } else {
+      var finishedCustomer = line.shift();
+      console.log(finishedCustomer + ' is done!')
+    }
+    //console.log('now the line is', line)
+  }
+}
 
-
-
+bank(['billy', 'sam', 'jane', 'margot', 'jazz', 'mary']);
 
 
 
