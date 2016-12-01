@@ -7,6 +7,24 @@ function is_palindrome(string) {
 	return string.split("").reverse().join("") === string;
 }
 
+// stack solution
+function checkPalindromeStack(string) {
+  string = string.toLowerCase().replace(/[^a-z]/g, "");
+  var stack = [];
+  
+  for (var i = string.length - 1; i >= 0; i--) {
+    stack.push(string[i]);
+  }
+  
+  if (stack.join('') === string) {
+    return true;
+  }
+  
+  return false;
+}
+
+checkPalindromeStack('A nut for a jar of tuna')
+
 // console.log(is_palindrome("dad"));
 // console.log(is_palindrome("A man, a plan, a canal: Panama"));
 // console.log(is_palindrome("1001"));
